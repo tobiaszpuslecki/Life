@@ -1,28 +1,37 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import AuthenticationService from "../../service/AuthenticationService"
-export default class Header extends Component {
-    state={
-        logged:false
-    }
+import {withGlobalState} from 'react-globally'
+import './Header.css'
+class Header extends Component {
     logout = () =>{
         AuthenticationService.logout();
-        this.setState({logged: false});
+        this.props.setGlobalState(prevGlobalState => ({
+            logged: false
+        }))
+        
     }
     render() {
-        if(this.state.logged){
+        console.log(this.props.globalState.logged)
+        if(this.props.globalState.logged){
+            
             return(
-                <div>
-                    <Link to="/home">Home</Link>
-                    <Link to="/" onClick={this.logout}>Logout</Link>
+                <div className='header'>
+                    <Link className='link logo' to="/">Life</Link>
+                    <Link className='link' to="/home">Home</Link>
+                    <Link className='link' to="/" onClick={this.logout}>Logout</Link>
+                    
+
                 </div>
             )
         }
         return (
-            <div>
-                <Link to="/login">Login</Link>
-                <Link to="/home">Home</Link>
+            <div className='header'>
+                <Link className='link logo' to="/">Life</Link>
+                <Link className='link' to="/login">Login</Link>
+                <Link className='link' to="/sign-up">Sign up</Link>
             </div>
         )
     }
 }
+export default withGlobalState(Header)

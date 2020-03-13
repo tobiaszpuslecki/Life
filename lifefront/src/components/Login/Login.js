@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import "./login.css"
 import AuthenticationService from "../../service/AuthenticationService"
 import { Redirect } from 'react-router'
-export default class Login extends Component {
+import {withGlobalState} from 'react-globally'
+class Login extends Component {
     state={
         username: '',
         password: '',
@@ -24,32 +25,34 @@ export default class Login extends Component {
         this.login(this.state.username,this.state.password);
       }
       login = (username,password) =>{
+        
         AuthenticationService
         .executeJwtAuthenticationService(username, password)
         .then((response) => {
-            AuthenticationService.registerSuccessfulLoginForJwt(username, response.headers.authorization)
-            this.setState({username: username})
-            this.setState({ showSuccessMessage: true })
-            this.setState({ hasLoginFailed: false })
+          AuthenticationService.registerSuccessfulLoginForJwt(username, response.headers.authorization)
+          this.props.setGlobalState(() =>({
+            logged:true
+        }))
         }).catch(() => {
-            this.setState({ showSuccessMessage: false })
-            this.setState({ hasLoginFailed: true })
+          alert('The username or password is incorrect')
         })
       }
     render() {
         const { from } = this.props.location.state || { from: { pathname: '/' } }
-        console.log(this.state.showSuccessMessage)
-        if(this.state.showSuccessMessage === true){
-            return <Redirect to={from}/>
+        if(this.props.globalState.logged){
+            return <Redirect to={'/home'}/>
         }
         return (
-            <div>
+            <div className='loginContainer'>
+                <h1>Life</h1>
                 <form  onSubmit={this.submit}>
-                    <input type="text" name = "username" placeholder="Login" onChange={this.onChangeUser} />
-                    <input type="password" name = "password" placeholder="password" onChange={this.onChangePassword} />
-                    <input type="submit" value="Log in" />
+                    <input className='usernameField' type="text" name = "username" placeholder="Login" onChange={this.onChangeUser} />
+                    <input className='passwordField' type="password" name = "password" placeholder="password" onChange={this.onChangePassword} />
+                    <input className='btn' type="submit" value="Log in" />
                 </form>
+
             </div>
         )
     }
 }
+export default withGlobalState(Login)

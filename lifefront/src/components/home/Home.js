@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import AuthenticationService from '../../service/AuthenticationService'
-
-export default class Home extends Component {
+import {withGlobalState} from 'react-globally'
+import { Redirect } from 'react-router'
+class Home extends Component {
     state={
         quest: {}
     }
@@ -22,6 +23,9 @@ export default class Home extends Component {
         )
     }
     render() {
+        if(!this.props.globalState.logged){
+            return <Redirect to='/login'/>
+        }
         return (
             <div>
                 <h2>
@@ -37,3 +41,4 @@ export default class Home extends Component {
         )
     }
 }
+export default withGlobalState(Home)

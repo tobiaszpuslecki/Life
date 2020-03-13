@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import {withGlobalState} from 'react-globally'
 const API_URL = 'http://localhost:8080'
 
 export const USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
@@ -20,6 +20,8 @@ class AuthenticationService {
         sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username)
         sessionStorage.setItem(USER_JWT_TOKEN, token)
         this.setupAxiosInterceptors()
+        console.log(withGlobalState)
+
     }
 
     createJWTToken(token) {
@@ -30,7 +32,6 @@ class AuthenticationService {
     logout() {
         sessionStorage.removeItem(USER_NAME_SESSION_ATTRIBUTE_NAME);
         sessionStorage.removeItem(USER_JWT_TOKEN);
-        
     }
 
     isUserLoggedIn() {

@@ -5,21 +5,24 @@ import ProtectedRoute from './service/ProtectedRoute'
 import Home from './components/home/Home'
 import AuthenticationService from './service/AuthenticationService'
 import Header from './components/Header/Header'
-export default class App extends Component {
+import SignUp from './components/SignUp/SignUp'
+import {withGlobalState} from 'react-globally'
+import MainPage from './components/MainPage/MainPage'
+class App extends Component {
   render() {
     return (
       <Router>
-      <div>
-        <Header/>
-        <Route path="/"/>
+        <Header></Header>
+        <Route exact path="/sign-up" component={SignUp}/>
         <Route
           exact path="/login"
           render={(props) => <Login {...props}/>}
         />
-        <ProtectedRoute path="/home" component={Home}/>
-      </div>
+        <Route exact path="/home" component={Home}/>
+        <Route exact path="/" component={MainPage}/>
       </Router>
 
     )
   }
 }
+export default withGlobalState(App)
