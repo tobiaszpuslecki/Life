@@ -9,4 +9,5 @@ public class LifeApplication {
   public static void main(String... args) {
     SpringApplication.run(LifeApplication.class, args);
   }
+  
 }
