@@ -9,18 +9,11 @@ class Home extends Component {
     }
     componentDidMount(){
     AuthenticationService.setupAxiosInterceptors();
-      axios.get("http://localhost:8080/quests/1")
+      axios.get("http://localhost:8080/quests")
       .then( response => (
           this.setState({quest:response.data})
       ) 
       )
-    }
-    test = () =>{
-        axios.get("http://localhost:8080/quests/1")
-        .then( response => (
-            this.setState({quest:response.data})
-        ) 
-        )
     }
     render() {
         if(!this.props.globalState.logged){
@@ -28,15 +21,6 @@ class Home extends Component {
         }
         return (
             <div>
-                <h2>
-                    {this.state.quest.name}
-                </h2>
-                <p>
-                    Description: {this.state.quest.description}
-                </p>
-                <p>
-                    Points: {this.state.quest.points}
-                </p>
             </div>
         )
     }

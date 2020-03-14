@@ -46,8 +46,8 @@ class Login extends Component {
             <div className='loginContainer'>
                 <h1>Life</h1>
                 <form  onSubmit={this.submit}>
-                    <input className='usernameField' type="text" name = "username" placeholder="Login" onChange={this.onChangeUser} />
-                    <input className='passwordField' type="password" name = "password" placeholder="password" onChange={this.onChangePassword} />
+                    <input type="text" name = "username" placeholder="Login" onChange={this.onChangeUser} />
+                    <input type="password" name = "password" placeholder="password" onChange={this.onChangePassword} />
                     <input className='btn' type="submit" value="Log in" />
                 </form>
 
