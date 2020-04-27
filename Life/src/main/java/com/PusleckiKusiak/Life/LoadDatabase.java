@@ -25,22 +25,20 @@ class LoadDatabase implements CommandLineRunner {
 	@Override
 	public void run(String... strings) throws Exception{
 		 userRepository.save(new User("user",bCryptPasswordEncoder.encode("password")));
-		 questRepository.save(new Quest("Librarian", "Przeczytaj 50 stron książki", 100));
-		 questRepository.save(new Quest("Quest2", "Przebiegnij 5 kilometrów", 100));
-		 questRepository.save(new Quest("Lance, is that you?", "Przejedź na rowerze 30 kilometrów", 100));
-		 questRepository.save(new Quest("Quest4", "Zrób 15 pompek", 100));
-		 questRepository.save(new Quest("Code IT!", "Napisz 100 linii kodu", 100));
-		 questRepository.save(new Quest("Quest3", "Obejrzyj 2 odcinki serialu", 100));
-		 questRepository.save(new Quest("Grow a beard", "Rozwiąż 5 zadań rachunkowych", 100));
-		 questRepository.save(new Quest("Quest5", "Oglądaj TV przez 60 minut", 100));
-		 questRepository.save(new Quest("Quest5", "Zagraj na komputerze przez 45 minut", 100));
-		 questRepository.save(new Quest("Yeah! Science", "Opracuj 5 zagadnień na następne zajęcia", 100));
-		 questRepository.save(new Quest("Quest5", "Pozmywaj naczynia", 100));
-		 questRepository.save(new Quest("Quest5", "Poodkurzaj", 100));
-		 questRepository.save(new Quest("Quest5", "Zrób pranie", 100));
-		 questRepository.save(new Quest("Quest5", "Umyj podłogę", 100));
+		 questRepository.save(new Quest("Librarian", "Read 50 pages of the book", 100));
+		 questRepository.save(new Quest("Marathon", "Run 5 kilometers", 100));
+		 questRepository.save(new Quest("Lance, is that you?", "Ride a bike 30 kilometers", 100));
+		 questRepository.save(new Quest("Schwarzenegger", "Do 15 push-ups", 100));
+		 questRepository.save(new Quest("Code IT!", "Write 100 lines of code", 100));
+		 questRepository.save(new Quest("Netfix and chill", "Watch 4 episodes of the favourite series", 100));
+		 questRepository.save(new Quest("Youth friend", "Solve 5 accounting tasks", 100));
+		 questRepository.save(new Quest("TV and.. chill?", "Watch TV for 60 minutes", 100));
+		 questRepository.save(new Quest("PCMR", "Play computer game for 60 minutes", 100));
+		 questRepository.save(new Quest("Yeah! Science", "Study for your next class", 100));
 		 questRepository.save(new Quest("Finally some good food", "Ugotuj obiad", 100));
 		 questRepository.save(new Quest("We have to cook", "Try a new food", 100));
-		 questRepository.save(new Quest("Quest5", "Umyj podłogę", 100));
+		 questRepository.save(new Quest("Monter hunter", "Kill a bug", 100));
+		 questRepository.save(new Quest("Pot planter", "Plant a plant", 100));
+		 questRepository.save(new Quest("Music to my ears", "Listen to your favourite music", 100));
 	}
 }
