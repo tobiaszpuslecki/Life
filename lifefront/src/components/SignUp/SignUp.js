@@ -3,7 +3,8 @@ import Axios from 'axios'
 import AuthenticationService from '../../service/AuthenticationService'
 import { Redirect } from 'react-router'
 import './SignUp.css'
-export default class SignUp extends Component {
+import {withGlobalState} from 'react-globally'
+class SignUp extends Component {
     state={
         username:'',
         password:'',
@@ -31,15 +32,23 @@ export default class SignUp extends Component {
                     username: this.state.username,
                     password: this.state.password
                 }
-            }).then(
+            }).then((response) =>{
                 this.setState({completed:true})
-                )
+                
+            }).catch((e) =>{
+                if(e.response.status === 409){
+                    alert("This username is already in use")
+                }
+            })
         }
         else alert("Please provide valid username/password")
     }
     render() {
         if(this.state.completed){
             return <Redirect to='/login'/>
+        }
+        else if (this.props.globalState.logged){
+            return <Redirect to={'/home'}/>
         }
         return (
             <div className='signUpContainer'> 
@@ -53,3 +62,4 @@ export default class SignUp extends Component {
         )
     }
 }
+export default withGlobalState(SignUp)

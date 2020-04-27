@@ -1,0 +1,42 @@
+.dailyContainer {
+  margin: auto;
+  margin-top: 2em;
+  padding: 1em 0 1em 0;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #00adb5;
+  min-width: 30%;
+  max-width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #222831;
+}
+
+.dailyContainer .dailyHeader {
+  margin-bottom: 1em;
+}
+
+.dailyContainer * {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.dailyContainer button {
+  width: 30%;
+  height: 2em;
+  border: none;
+  background-color: #00adb5;
+  color: #eeeeee;
+  border-radius: 5px;
+  margin-top: 1em;
+}
+/*# sourceMappingURL=DailyQuest.css.map */

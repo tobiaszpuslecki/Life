@@ -4,8 +4,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import AuthenticationService from './service/AuthenticationService';
 const initialState = {
-    logged: false
+    logged: AuthenticationService.isUserLoggedIn()
   }
   ReactDOM.render(
     <Provider globalState={initialState}>
