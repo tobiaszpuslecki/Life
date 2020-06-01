@@ -46,7 +46,7 @@ public class ScheduledTasks {
 
     // for debug purposes 15 seconds
 
-    @Scheduled(cron = "0/15 * * * * ?")
+    @Scheduled(cron = "0/30 * * * * ?")
     public void generateDailyTask(){
         if(questRepository.count() != 0){
             long id;
@@ -63,7 +63,7 @@ public class ScheduledTasks {
         }
     }
     // for debug purposes 20 seconds
-    @Scheduled(cron = "0/20 * * * * ?")
+    @Scheduled(cron = "0/40 * * * * ?")
     public void generateWeeklyTask(){
         if(questRepository.count() != 0){
             long id;

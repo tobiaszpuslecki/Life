@@ -17,7 +17,18 @@ display: flex;
 flex-direction: column;
 background-color: $dark-background;
 .weeklyHeader{
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid $accent-color;
+}
+hr{
+    display: block;
+    height: 1px;
+    width: 60%;
+    border: 0;
+    border-top: 1px solid $accent-color;
+    margin: 0 0 1em 0;
+    padding: 0;
 }
 *{
     align-self: center;
@@ -26,12 +37,14 @@ background-color: $dark-background;
     margin-bottom: 0.5em;
 }
 button{
-    width: 30%;
-    height: 2em;
+    width: 40%;
+    height: 4em;
     border: none;
     background-color: $accent-color;
     color: $font-color;
     border-radius: 5px;
     margin-top: 1em;
+    font-weight: bold;
+    font-size: 1rem;
 }
 }

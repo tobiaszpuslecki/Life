@@ -26,6 +26,7 @@ export default class DailyQuest extends Component {
             return (
                 <div className='dailyContainer'>
                     <h1 className="dailyHeader">Daily challenge</h1>
+
                     <h1>{this.props.quest.name}</h1>
                     <h2>{this.props.quest.description}</h2>
                     <h3>You will earn {this.props.quest.points} points</h3>

@@ -18,7 +18,9 @@
 }
 
 .dailyContainer .dailyHeader {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #00adb5;
 }
 
 .dailyContainer * {
@@ -31,12 +33,14 @@
 }
 
 .dailyContainer button {
-  width: 30%;
-  height: 2em;
+  width: 40%;
+  height: 4em;
   border: none;
   background-color: #00adb5;
   color: #eeeeee;
   border-radius: 5px;
   margin-top: 1em;
+  font-weight: bold;
+  font-size: 1rem;
 }
 /*# sourceMappingURL=DailyQuest.css.map */
