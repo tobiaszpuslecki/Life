@@ -1,12 +1,11 @@
-package com.PusleckiKusiak.Life.entity;
+package com.PusleckiKusiak.Life.entity.model;
 
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
-@Data
+import javax.persistence.OneToMany;
 @Entity
 public
 class Quest {
@@ -16,6 +15,8 @@ class Quest {
   private String description;
   private int points;
   private Boolean isDone;
+
+
 
   public  Quest() {}
 

@@ -1,9 +1,7 @@
-package com.PusleckiKusiak.Life.entity;
+package com.PusleckiKusiak.Life.entity.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -16,7 +14,12 @@ public class User {
 	private boolean doneDaily = false;
 	private boolean doneWeekly = false;
 	private int xp = 0;
-	public User(){}
+	private String role;
+
+
+	public User(){
+	    this.role = "User";
+    }
 	public User(String username, String password){
 		this.username = username;
 		this.password = password;
@@ -64,5 +67,17 @@ public class User {
 
     public void setXp(int xp) {
         this.xp = xp;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
