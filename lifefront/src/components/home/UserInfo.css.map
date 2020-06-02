@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAIA,AAAA,kBAAkB,CAAA;EACd,UAAU,EAAE,UAAU;EACtB,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,KAAK,EARI,OAAO;EAShB,OAAO,EAAE,KAAK;EACd,KAAK,EAAE,GAAG;CAKb;;AAXD,AAQA,kBARkB,CAQlB,CAAC,CAAA;EACG,YAAY,EAAE,GAAG;CACpB",
+    "sources": [
+        "UserInfo.scss"
+    ],
+    "names": [],
+    "file": "UserInfo.css"
+}

@@ -1,0 +1,16 @@
+$font-color: #eeeeee;
+$accent-color: #00adb5;
+$dark-background: #222831;
+
+.userInfoContainer{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: $font-color;
+    display: block;
+    width: 20%;
+
+*{
+    padding-left: 2em;
+}
+}
